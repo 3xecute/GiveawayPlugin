@@ -1,0 +1,24 @@
+name: Giveaway
+version: '${project.version}'
+main: dev.giveaway.GiveawayPlugin
+api-version: '1.20'
+description: A powerful giveaway plugin for Paper 1.20+
+authors: [execute ( orangeblockmc )]
+
+softdepend:
+  - Vault
+
+commands:
+  g:
+    description: Giveaway command.
+    usage: /g [giveaway|cancel|info|history|reload]
+
+permissions:
+  giveaway.admin:
+    description: Start, cancel and manage giveaways.
+    default: op
+    children:
+      giveaway.join: true
+  giveaway.join:
+    description: Participate in giveaways.
+    default: true

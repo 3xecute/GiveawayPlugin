@@ -1,0 +1,137 @@
+# ============================================================
+#   Giveaway Configuration
+#   Plugin Version: 1.0.0
+#
+#   Author is: execute ( orangeblockmc )  -> discord: orangeblockmc
+#   This plugin was specifically developed for AurelisCraft.
+# ============================================================
+
+# Duration of the giveaway in seconds
+duration: 60
+
+# Number of winners to select
+winner-count: 1
+
+# Minimum participants required. If not reached, giveaway is cancelled.
+min-participants: 2
+
+# Cooldown between giveaways (seconds). 0 = no cooldown.
+cooldown: 300
+
+# Announcement intervals (seconds remaining)
+announce-at: [60, 30, 15, 10, 5, 4, 3, 2, 1]
+
+# Pre-announce: broadcast a message X seconds BEFORE the giveaway starts.
+# This is sent when the admin closes the prize chest (before confirming).
+# Set to 0 to disable.
+pre-announce-before: 300
+
+# Prize chest GUI title (supports color codes)
+chest-title: "&6&lGiveaway Prize Chest"
+
+# Firework effect on winner location (true/false)
+firework: true
+
+# Sound played for the winner when they win.
+# Must be a valid Bukkit Sound name. Leave empty ("") to disable.
+# Full list: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+winner-sound: "ENTITY_FIREWORK_ROCKET_BLAST"
+
+# How many past giveaways to keep in /g history
+history-size: 10
+
+# ============================================================
+#   Messages
+#   Supports: & color codes and &#RRGGBB hex colors
+# ============================================================
+messages:
+  # Prefix shown before every message
+  prefix: "&8[&6Giveaway&8] &r"
+
+  # ── Setup ──────────────────────────────────────────────
+  # Shown to admin when chest GUI opens
+  chest-open: "&ePlease place the prize items in the chest, then close it."
+
+  # Shown to admin after closing the chest (clickable confirm button)
+  confirm-text: "&a&l[ ✔ Click here to confirm and start the giveaway! ]"
+
+  # Tooltip shown when hovering over the confirm button
+  confirm-hover: "&aClick to start the giveaway!"
+
+  # Shown when admin closes chest without placing any items
+  no-items: "&cYou didn't place any items! Giveaway cancelled."
+
+  # ── Pre-announce ────────────────────────────────────────
+  # Broadcast to all players when chest is closed (before confirmation).
+  # {time} = seconds defined in pre-announce-before
+  pre-announce: "&6A giveaway will start in &e{time} seconds&6! Get ready!"
+
+  # ── Giveaway Start ──────────────────────────────────────
+  # Broadcast to all players when giveaway starts
+  start: "&aA giveaway has started!"
+
+  # Text of the clickable join button shown next to start message
+  start-join-button: "&a&l[ ➤ CLICK TO JOIN ]"
+
+  # Tooltip shown when hovering over the join button
+  start-join-hover: "&eClick to join the giveaway!"
+
+  # ── Countdown ───────────────────────────────────────────
+  # Broadcast at each interval defined in announce-at. {time} = seconds left
+  countdown: "&e{time} seconds &7remaining in the giveaway!"
+
+  # ── Chat Freeze ─────────────────────────────────────────
+  # Shown to player when they try to chat during the giveaway
+  chat-frozen: "&cChat is frozen during the giveaway! Click the join button or type &e/g&c."
+
+  # ── Participation ───────────────────────────────────────
+  joined: "&aYou have successfully joined the giveaway!"
+  already-joined: "&cYou are already participating in the giveaway!"
+  no-giveaway: "&cThere is no active giveaway right now."
+  already-running: "&cA giveaway is already in progress!"
+  muted: "&cYou cannot participate because you are muted."
+
+  # ── Cooldown ────────────────────────────────────────────
+  # {time} = seconds remaining until next giveaway is allowed
+  on-cooldown: "&cA giveaway was held recently. Next one available in &e{time} seconds&c."
+
+  # ── Minimum Participants ────────────────────────────────
+  # {count} = actual count, {min} = required minimum
+  not-enough: "&cNot enough participants (&f{count}&c/&f{min}&c required). Giveaway cancelled."
+
+  # ── Cancel ──────────────────────────────────────────────
+  cancelled: "&cThe giveaway has been cancelled by an admin."
+
+  # ── Info (/g info) ──────────────────────────────────────
+  # {participants} = current valid participant count, {time} = seconds left
+  info: "&7Participants: &f{participants} &7| Time left: &f{time}s"
+
+  # ── Results ─────────────────────────────────────────────
+  results-header: "&6&m----&r &6&lGIVEAWAY RESULTS &6&m----"
+  # {total} = total attempts (valid + invalid)
+  results-total: "&7Total participants: &f{total}"
+  # {count} = valid count
+  results-valid: "&aValid participants &7({count}&7):"
+  # {count} = invalid count
+  results-invalid: "&cInvalid participants &7({count}&7):"
+  results-footer: "&6&m------------------------------"
+
+  # ── Winner ──────────────────────────────────────────────
+  # Broadcast to all. {winner} = winner's name
+  winner: "&6&l★ &e{winner} &6has won the giveaway! &6&l★"
+  winner-prize: "&7Prize: &fThe chest items have been delivered to the winner!"
+  no-winner: "&cNo valid participants. No winner was selected."
+
+  # Sent privately to the winner only
+  winner-personal: "&6&lCongratulations! &eYou won the giveaway! Your prize has been added to your inventory."
+
+  # ── History (/g history) ────────────────────────────────
+  history-header: "&6&m----&r &6&lGIVEAWAY HISTORY &6&m----"
+  # {id} = entry number, {date} = date/time, {winners} = winner name(s), {items} = item summary
+  history-entry: "&7#&f{id} &8| &f{date} &8| &aWinner(s): &f{winners} &8| &7Items: &f{items}"
+  history-empty: "&7No giveaway history yet."
+  history-footer: "&6&m------------------------------"
+
+  # ── Admin ───────────────────────────────────────────────
+  no-permission: "&cYou don't have permission to do this."
+  reload: "&aGiveaway configuration has been reloaded successfully!"
